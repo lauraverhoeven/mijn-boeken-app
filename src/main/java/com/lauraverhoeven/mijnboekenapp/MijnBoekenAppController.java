@@ -37,6 +37,12 @@ public class MijnBoekenAppController {
         return "books";
     }
 
+//    @PostMapping("/emptyTable")
+//    public String emptyBooks(){
+//        mijnBoeken.clear();
+//        return "books";
+//    }
+
     public Integer getBookIndex(String title){
         for (int i = 0; i < mijnBoeken.size(); i++){
             if(mijnBoeken.get(i).getTitle().equalsIgnoreCase(title)) return i;
