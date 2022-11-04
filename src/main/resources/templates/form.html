@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+    <div class="topnav">
+        <a th:href="@{/}">Portaal</a>
+        <a th:href="@{/books}">Boeken</a>
+    </div>
+
+    <div class="container" id="form">
+        <h2 id="formHeader"> Boeken portaal </h2>
+        <form method="post" th:object="${book}" th:action="@{/handleSubmit}">
+            <input type="text" placeholder="Titel" th:field="*{title}">
+            <input type="text" placeholder="Auteur" th:field="*{author}">
+            <input type="text" placeholder="Jaartal" th:field="*{year}">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

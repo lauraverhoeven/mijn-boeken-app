@@ -8,9 +8,6 @@ import java.util.List;
 public class MijnBoekenAppApplication {
 
 	public static void main(String[] args) {
-		List<Book> Books = CSVReaderInJava.readBooksFromCSV("src/main/resources/static/books/books.csv");
-		System.out.println(Books.get(0));
-
 		SpringApplication.run(MijnBoekenAppApplication.class, args);
 	}
 

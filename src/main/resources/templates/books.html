@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <meta charset="UTF-8">
+    <title>Mijn Boeken App</title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a th:href="@{/}">Portaal</a>
+        <a th:href="@{/books}">Boeken</a>
+    </div>
+
+    <div class="container">
+        <h2> Mijn Boeken </h2>
+        <table id="table">
+            <tr>
+                <th>Titel</th>
+                <th>Auteur</th>
+                <th>Jaartal</th>
+            </tr>
+            <tr th:each="book: ${books}">
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.year}"></td>
+                <td><a role="button" class="update" th:href="@{/(title = ${book.title})}">Update</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
